@@ -62,3 +62,8 @@ for (let j = 0; j < colling_btn.length; j++) {
     }
   });
 }
+
+//clear button funcation
+document.getElementById("clear_btn").addEventListener("click", function () {
+  call_list.innerHTML = " ";
+});
