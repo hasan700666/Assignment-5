@@ -45,7 +45,7 @@ for (let j = 0; j < colling_btn.length; j++) {
 
       const newdiv3 = document.createElement("div");
       newdiv3.className = "divright font-bold text-lg";
-      //const d = new Date();
+
       newdiv3.textContent =
         formatTimeComponent(new Date().getHours()) +
         ":" +
