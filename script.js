@@ -93,3 +93,5 @@ for (let k = 0; k < copy_btn.length; k++) {
     navigator.clipboard.writeText(hotline_number[k - 1].innerText);
   });
 }
+
+//responsive for mobile devices
