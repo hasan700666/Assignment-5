@@ -1,3 +1,8 @@
+//time funcation
+function formatTimeComponent(component) {
+  return component < 10 ? "0" + component : component;
+}
+
 // heart counter
 const elements = document.getElementsByClassName("fa-heart");
 
@@ -39,8 +44,14 @@ for (let j = 0; j < colling_btn.length; j++) {
       newdiv2.className = "divleft";
 
       const newdiv3 = document.createElement("div");
-      newdiv3.className = "divright";
-      newdiv3.textContent = "time";
+      newdiv3.className = "divright font-bold text-lg";
+      //const d = new Date();
+      newdiv3.textContent =
+        formatTimeComponent(new Date().getHours()) +
+        ":" +
+        formatTimeComponent(new Date().getMinutes()) +
+        ":" +
+        formatTimeComponent(new Date().getSeconds());
 
       const newdiv2_1 = document.createElement("div");
       newdiv2_1.className = "divtop font-semibold";
@@ -67,3 +78,18 @@ for (let j = 0; j < colling_btn.length; j++) {
 document.getElementById("clear_btn").addEventListener("click", function () {
   call_list.innerHTML = " ";
 });
+
+//copy counter and copy text
+
+const copy_btn = document.getElementsByClassName("copy_btn");
+let copy_number_text = document.getElementById("copy_number_text");
+
+for (let k = 0; k < copy_btn.length; k++) {
+  copy_btn[k].addEventListener("click", function () {
+    let INTcopy_number = parseInt(copy_number_text.innerText);
+    alert("নাম্বার কপি হয়েছে: " + hotline_number[k - 1].innerText);
+    INTcopy_number = INTcopy_number + 1;
+    copy_number_text.innerText = INTcopy_number;
+    navigator.clipboard.writeText(hotline_number[k - 1].innerText);
+  });
+}
